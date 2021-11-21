@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins', sans-serif;
+
+}
+
+
+nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ed3d62;
+  border-radius: 20px;
+  position: sticky;
+  top:0;
+  z-index: 100;
+}
+
+.row {
+    margin-left: 30px
+}
+
+.topnav-left{
+  display: flex;
+  align-items: center;
+  background-color: #ed3d62;
+  overflow: hidden;
+  font-family: 'poppins';
+  font-size: 14px;
+  border-radius: 20px;
+
+}
+.topnav-right{
+  display: flex;
+  align-items: center;
+}
+
+.profile-pic img{
+  width: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+  margin-top: 3px;
+}
+
+
+.topnav-right a.active{
+  align-items: center;
+  margin-top: 1px;
+
+}
+.search{
+  background: #efefef;
+  width:350px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+}
+
+.search input{
+  width: 100%;
+  background: transparent;
+  padding: 10px;
+  outline: none;
+  border: 0;
+}
+
+.topnav-right a.active {
+  background-color: #333;
+  color: white;
+  height:36px;
+  width: 75px;
+  align-items: center;
+  font-family: Poppins;
+  font-size: 100%;
+  text-decoration: none;
+
+}
+
+.publish button {
+  font-family: Poppins;
+	border-radius: 20px;
+	border: 1px solid #ed3d62;
+	background-color: #ed3d62;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 12px 45px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+    margin-left:15px;
+    margin-right: 15px;
+     cursor: pointer;
+}
+
+.username{
+  font-family: Poppins;
+  color: white;
+  font-size:14px;
+  margin-right: 40px;
+}
+
+
+.tweet-body{
+  width: 75%;
+  margin-left:15px;
+  margin-right: 15px;
+  position: center;
+  align: center;
+}
+
+.tweet-body textarea{
+  width: 750px;
+  font-family: Poppins;
+  overflow: hidden;
+  resize: none;
+  margin-top: 10px;
+  height: 80px;
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.post-content{
+  margin-top: 10px;
+  alignment: center;
+  border-radius: 4px;
+  width: 95%;
+  height: 75%;
+  margin-left: 15px;
+  margin-right: 15px;
+  border: 1px solid #f1f2f2;
+  margin-bottom: 20px;
+  overflow: hidden;
+  position: relative;
+  font-family: Poppins;
+  font-size: 14px;
+}
+
+.post-text{
+  margin-top: 10px;
+  text-align: justify ;
+
+}
+.user-info{
+  margin-top: 10px;
+  margin-left: 20px;
+  font-size: 16px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 1%;
+
+}
+.left-sidebar{
+  background: #f3e0e2;
+  flex-basis: 25%;
+  position: sticky;
+  top: 20px;
+  align-self: flex-start;
+  height: 100vh;
+
+}
+.right-sidebar{
+  background: #f3e0e2;
+  flex-basis: 25%;
+  position: sticky;
+  top: 70px;
+  align-self: flex-start;
+  height: 100vh;
+}
+.main-container{
+  flex-basis: 47%;
+
+}
+.post-content img.post-image, video.post-video, .google-maps{
+  width: 100%;
+  height: auto;
+}
+
+.post-content .google-maps .map{
+  height: 300px;
+}
+
+.post-content .post-main-container{
+  padding: 20px;
+}
+
+.post-content .post-main-container .post-detail{
+  margin-left: 65px;
+  position: relative;
+}
+
+.post-content .post-main-container .post-detail .post-text{
+  line-height: 24px;
+  margin: 0;
+}
+
+.post-content .post-main-container .post-detail .reaction{
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.post-content .post-main-container .post-detail .post-comment{
+  display: inline-flex;
+  margin: 10px auto;
+  width: 100%;
+}
+
+.post-content .post-main-container .post-detail .post-comment img.profile-photo-sm{
+  margin-right: 10px;
+}
+
+.post-content .post-main-container .post-detail .post-comment .form-control{
+  height: 30px;
+  border: 1px solid #ccc;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  margin: 7px 0;
+  min-width: 0;
+}
+
+img.profile-photo-md {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+img.profile-photo-sm {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+
+.text-green {
+    color: #8dc63f;
+}
+
+.text-red {
+    color: #ef4136;
+}
+
+.following {
+    color: #8dc63f;
+    font-size: 12px;
+    margin-left: 20px;
+}
+.profile-link{
+   text-decoration: none;
+  color: #6b6e80;
+}
+
+.comment{
+    font-family: Poppins;
+	border-radius: 20px;
+	border: 1px solid #ed3d62;
+	background-color: #ed3d62;
+	color: #FFFFFF;
+	font-size: 10px;
+	font-weight: bold;
+	padding: 5px 15px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+    margin-left:12px;
+    margin-right: 12px;
+     cursor: pointer;
+
+}
+
+
+</style>
+<head>
+    <meta charset = "UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width", intital-scale="1.0">
+    <title>KAMU</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+</head>
+<nav>
+<div class="topnav-left" >
+    <a class="logo" href ="#">
+    <img   src="../images/KAMU.png" align="right" height="45px" >
+    </a>
+    <a class="search">
+        <input type="text" placeholder="Search">
+    </a>
+
+
+</div>
+<div class="topnav-right" >
+    <a class="username">
+        Welcome to KAMU
+    </a>
+    <a class="profile-pic" href="profile_page.html" >
+    <img src="../images/KAMU_nav2.png">
+    </a>
+
+</div>
+</nav>
+
+<div class = "container">
+    <div class="left-sidebar">
+    </div>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+ <div class="main-container">
+
+
+        <div class="tweet-body">
+    <form method="post" enctype="multipart/form-data">
+<!--        <textarea class="status" name="status" placeholder="Write your post here!" rows="4" cols="50"></textarea>-->
+    </form>
+        </div>
+    <div class="publish">
+
+   <button><a href="http://127.0.0.1:8000/add_post/">ADD POST</a></button>
+
+</div>
+     {% block content %}
+    <div class="row">
+        <div class="col-md-8">
+            <div class="post-content">
+
+              <div class="post-container">
+
+                <div class="post-detail">
+                  <div class="user-info">
+                    <a href="timeline.html" class="profile-link">@username</a>
+                  </div>
+
+                  <div class="line-divider"></div>
+                  <div class="post-text">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <i class="em em-anguished"></i> <i class="em em-anguished"></i> <i class="em em-anguished"></i></p>
+                  </div>
+
+                         <button class="comment">COMMENT</button>
+
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+     {% endblock%}
+</div>
+
+    <div class="right-sidebar">
+
+
+    </div>
+
+
+
+
+</div>
+
+
+
+
+</body>
+
+
+</html>

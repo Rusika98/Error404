@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h1 class = "title">{{BlogPosts.title}}</h1>
+
+    <small> Posted at {{BlogPosts.date_added}}</small>
+
+    <p><strong>{{BlogPosts.intro}}</strong></p>
+    <p>{{BlogPosts.body}}</p>
+
+    <hr>
+    <h2 class = "subtitle">Comments</h2>
+
+    {% for comments in BlogPosts.comments.all %}
+        <article class="media">
+            <div class="media-content">
+                <div class="content">
+                    <p>
+                        <strong>{{ comments.name }}</strong><small>{{ comments.date_added }}</small>
+                        <br>
+                        {{ comments.body }}
+                    </p>
+                </div>
+            </div>
+        </article>
+     {% empty %}
+            <div class="notification">
+                <p>BE THE FIRST TO COMMENT !</p>
+            </div>
+    {% endfor %}
+    <hr>
+
+    <h2 class="substitle">Add Comment</h2>
+
+    <form method = "post" action=".">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <div class="field">
+            <div class="control">
+                <button class="button is-success">Submit</button>
+
+            </div>
+        </div>
+    </form>
+
+
+{% endblock %}
